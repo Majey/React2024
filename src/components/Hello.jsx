@@ -1,14 +1,20 @@
-const Wow = () => "Wow!"
+const Wow = () => "Wow!";
 
-const Hello = ({profile}) => {
-  return <div>
-    <h3>Hello from a component! {Wow()}</h3>
-    <p>{profile.name}</p>
-    <p>{profile.status}</p>
-    <p>{profile.gender}</p>
-    <p>{profile.age}</p>
-  
-  </div>;
+const Hello = ({ profile }) => {
+  return (
+    <div>
+      <ol>
+        {profile.map((person) => (
+          <li key={person.id}>
+            <p>{person.name}</p>
+            <p>{person.status}</p>
+            <p>{person.gender}</p>
+            <p>{person.age}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
 };
 
 export default Hello;
