@@ -32,30 +32,24 @@ const Hello = () => {
     },
   ];
 
-  const display = false;
-  let message;
-
-  if (display) {
-    message = (
-      <div>
-        <ol>
-          {profile.map((person) => (
-            <Helloprop
-              key={person.id}
-              name={person.name}
-              status={person.status}
-              gender={person.gender}
-              age={person.age}
-            ></Helloprop>
-          ))}
-        </ol>
-      </div>
-    );
-  } else {
-    message = <h1>display is FALSE</h1>;
-  }
-
-  return message;
+  const display = true;
+  return display ? (
+    <div>
+      <ol>
+        {profile.map((person) => (
+          <Helloprop
+            key={person.id}
+            name={person.name}
+            status={person.status}
+            gender={person.gender}
+            age={person.age}
+          ></Helloprop>
+        ))}
+      </ol>
+    </div>
+  ) : (
+    <h1>display is FALSE</h1>
+  );
 };
 
 export default Hello;
